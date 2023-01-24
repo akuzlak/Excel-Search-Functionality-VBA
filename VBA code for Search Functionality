@@ -7,14 +7,14 @@ Private Sub CommandButton1_Click()
     'Get the search criteria entered in the search box
     searchCriteria = Worksheets("Search_Data_Catalog").TextBox1.Value
     'Set the range to search for the criteria
-    With Worksheets("Queried_Data_Catalog")
+    With Worksheets("Data_Catalog")
     Set searchRange = .Range("A1:AD" & .UsedRange.Rows.Count)
     End With
     'loop through the range
     For Each cell In searchRange
     If InStr(1, UCase(cell.Value), UCase(searchCriteria), vbTextCompare) > 0 Then
         If resultsRange Is Nothing Then
-            Set resultsRange = Union(cell.EntireRow, Worksheets("Queried_Data_Catalog").Range("A1:AD1"))
+            Set resultsRange = Union(cell.EntireRow, Worksheets("Data_Catalog").Range("A1:AD1"))
         Else
             Set resultsRange = Union(resultsRange, cell.EntireRow)
         End If
