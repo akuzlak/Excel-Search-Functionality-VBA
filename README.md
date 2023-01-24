@@ -8,13 +8,18 @@ It is always possible to search for what you are looking for in Microsoft Excel 
 
 ## How to use this VBA?
 
-You need to crate two sheets in an Macro-enabled Microsoft Excel file. One sheet is to insert search buttons and the other sheet is for storing the data to search. Eventually a third sheet will be created by the VBA called **Results** to show the search results. You can always change the name of this Results sheet.
+1) You need to crate two sheets in an Macro-enabled Microsoft Excel file. One sheet is to insert search buttons and the other sheet is for storing the data to search. Eventually a third sheet will be created by the VBA called Results to show the search results. You can always change the name of this Results sheet.
+2) In the search fucntionaility sheet, create two Active X controls; TextBox and Command Button
 
 ## What should be changed in the code before using it?
 
 As this code is created for a specific project, sheet names in the code must be replaced by sheet names that your Excel has so that they match with your sheet names to prevent receiving errors. Thus replace these sheet names; 
 1) Search_Data_Catalog: This is the sheet that you should insert the TextBox and Command Button from Active X control group. So replace this sheet name to your sheet name where you use these Active X control utilities.
 2) Data_Catalog: This is the sheet that your data resides, in other words, this is the sheet that our search functionality will search for the word(s) you are looking for. Again, replace this with the sheet name you have where the data resides
+
+## What does it exactly do?
+
+This code searches the search criteria in specified Excel sheet and if found shows a message box about how many results are found. If nothing found, again shows a message box that nothing has beedn found. The It creates a new sheet called Results and list the rows that includes the search criteria somewhere. Also the title of the search sheet is included to make sense of which data/row is coming from which field/column. If a new search is executed, then Results sheet is cleaned and filled with the new results only when there are new results. If nothing has been found with the new search, then Results sheet remain intact unless a search result ends up bringing something.
 
 ## How is this VBA created?
 
