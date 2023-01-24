@@ -12,7 +12,7 @@ You need to crate two sheets in an Macro-enabled Microsoft Excel file. One sheet
 
 ## What should be changed in the code before using it?
 
-As this code is created for a specific project, sheet names in the code must be replaced by sheet names that your Excel has so that they match with your sheet names to prevent receiving errors. Thus change sheet names that need to change; 
+As this code is created for a specific project, sheet names in the code must be replaced by sheet names that your Excel has so that they match with your sheet names to prevent receiving errors. Thus replace these sheet names; 
 1) Search_Data_Catalog: This is the sheet that you should insert the TextBox and Command Button from Active X control group. So replace this sheet name to your sheet name where you use these Active X control utilities.
 2) Data_Catalog: This is the sheet that your data resides, in other words, this is the sheet that our search functionality will search for the word(s) you are looking for. Again, replace this with the sheet name you have where the data resides
 
