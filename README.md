@@ -15,7 +15,7 @@ It is always possible to search for what you are looking for in Microsoft Excel 
 1) Create two sheets in a Macro-enabled Microsoft Excel file. One sheet is for inserting search buttons, and the other sheet is for storing the data to search. Eventually, a third sheet will be created by the VBA called "Results" to show the search results. You can always change the name of this Results sheet.
 2) In the search functionality sheet, create two Active X controls: a TextBox and a Command Button.
 
-## What should be changed in the code before using it
+## What to change in the code before using it
 
 As this code is created for a specific project, sheet names and range in the code must be replaced to prevent receiving errors. Thus, make the following changes in the code:
 
@@ -23,6 +23,6 @@ As this code is created for a specific project, sheet names and range in the cod
 2) Replace "Data_Catalog" sheet name. This is the sheet where your data resides; in other words, this is the sheet that our search functionality will search for the word(s) you are looking for. Again, replace this with the sheet name you have where the data resides. Note that this name is in two different places, so replace both.
 3) Replace the search range of A:AD with your sheet's range. Note that these are in two different places, so replace both.
 
-## How is this VBA created?
+## How is this VBA code created?
 
 This VBA is created by an iterative approach using the ChatGPT AI tool. By giving commands to ChatGPT and getting help from it when errors are encountered, after around 4-6 hours of work which includes around 25-35 iterations, this VBA code is created.
