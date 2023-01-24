@@ -4,7 +4,7 @@ This repository is about a search functionality within Microsoft Excel using VBA
 
 ## What does it exactly do?
 
-This code searches the search criteria in the specified Excel sheet and if found shows a message box about how many results are found. If nothing is found, it shows a message box that nothing has been found. It creates a new sheet called "Results" and lists the rows that include the search criteria somewhere. Also, the title of the search sheet is included to make sense of which data/row is coming from which field/column. If a new search is executed, then "Results" sheet is cleaned and filled with the new results only when there are new results. If nothing is found with the new search, then "Results" sheet remains intact unless a search result ends up bringing something.
+This code searches the search criteria in the specified Excel sheet and if found shows a message box about how many results are found. If nothing is found, it shows a message box that nothing has been found. It creates a new sheet called "Results" and lists the rows that include the search criteria there. Also, the title of the search sheet is included to make sense of which data/row is coming from which field/column. If a new search is executed, then "Results" sheet is cleaned and filled with the new results only when there are new results. If nothing is found with the new search, then "Results" sheet remains intact unless a search result ends up bringing something.
 
 ## Advantages over classical Excel's built-in search
 
@@ -25,4 +25,4 @@ As this code is created for a specific project, sheet names and range in the cod
 
 ## How is this VBA created?
 
-This VBA is created by an iterative approach using the ChatGPT AI tool made public in November 2022 and as of January 24, 2023, it is still free to use. By giving commands to ChatGPT and getting help from it when errors are encountered, after around 4-6 hours of work which includes around 25-35 iterations, this VBA code is created.
+This VBA is created by an iterative approach using the ChatGPT AI tool. By giving commands to ChatGPT and getting help from it when errors are encountered, after around 4-6 hours of work which includes around 25-35 iterations, this VBA code is created.
