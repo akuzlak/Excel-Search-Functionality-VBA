@@ -1,4 +1,4 @@
-# ExcelSearchFunctionalityVBA
+# Excel Search Functionality with VBA
 
 This repository is about a search functionality within Microsoft Excel using the VBA with the leading of renowned AI ChatGPT.
 
