@@ -1,0 +1,52 @@
+Private Sub CommandButton1_Click()
+    'Declare variables
+    Dim searchCriteria As String
+    Dim searchRange As Range
+    Dim resultsRange As Range
+    Dim newSheet As Worksheet
+    'Get the search criteria entered in the search box
+    searchCriteria = Worksheets("Search_Data_Catalog").TextBox1.Value
+    'Set the range to search for the criteria
+    With Worksheets("Queried_Data_Catalog")
+    Set searchRange = .Range("A1:AD" & .UsedRange.Rows.Count)
+    End With
+    'loop through the range
+    For Each cell In searchRange
+    If InStr(1, UCase(cell.Value), UCase(searchCriteria), vbTextCompare) > 0 Then
+        If resultsRange Is Nothing Then
+            Set resultsRange = Union(cell.EntireRow, Worksheets("Queried_Data_Catalog").Range("A1:AD1"))
+        Else
+            Set resultsRange = Union(resultsRange, cell.EntireRow)
+        End If
+    End If
+Next
+'Check if the criteria was found
+If Not resultsRange Is Nothing Then
+    'Check if the sheet already exists
+    On Error Resume Next
+    Set newSheet = ThisWorkbook.Sheets("Results")
+    On Error GoTo 0
+    'If the sheet doesn't exist, create a new one
+    If newSheet Is Nothing Then
+        Set newSheet = ThisWorkbook.Sheets.Add
+        newSheet.Name = "Results"
+    'If the sheet already exists, clear its content
+    Else
+        newSheet.Cells.Clear
+    End If
+   'Copy the results to the new sheet
+    Dim destinationRange As Range
+    Dim firstRow As Long
+    firstRow = 1
+    For Each area In resultsRange.Areas
+        Set destinationRange = newSheet.Range("A" & firstRow).Resize(area.Rows.Count, area.Columns.Count)
+        area.Copy Destination:=destinationRange
+        firstRow = firstRow + area.Rows.Count
+    Next
+    'Alert the user with the number of matches found
+    MsgBox "Found " & newSheet.UsedRange.Rows.Count - 1 & " matches for the search criteria" & vbNewLine & "Results are saved in 'Results' sheet."
+Else
+    MsgBox "No results found for the search criteria"
+End If
+
+End Sub
