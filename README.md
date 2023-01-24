@@ -15,8 +15,8 @@ It is always possible to search for what you are looking for in Microsoft Excel 
 
 As this code is created for a specific project, sheet names and range in the code must be replaced to prevent receiving errors. Thus, make the following changes in the code;
 1) Replace Search_Data_Catalog sheet name. This is the sheet that you should insert the TextBox and Command Button from Active X control group. So replace this sheet name to your sheet name where you use these Active X control utilities.
-2) Replace Data_Catalog sheet name. This is the sheet that your data resides, in other words, this is the sheet that our search functionality will search for the word(s) you are looking for. Again, replace this with the sheet name you have where the data resides.
-3) Replace the search range of A1:AD1 to your sheet's range.
+2) Replace Data_Catalog sheet name. This is the sheet that your data resides, in other words, this is the sheet that our search functionality will search for the word(s) you are looking for. Again, replace this with the sheet name you have where the data resides. Note that this name is in two different places, replace both.
+3) Replace the search range of A:AD to your sheet's range. Note that these are in two different places, so replace both.
 
 ## What does it exactly do?
 
