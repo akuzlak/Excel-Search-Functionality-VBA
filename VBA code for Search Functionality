@@ -43,6 +43,16 @@ If Not resultsRange Is Nothing Then
         area.Copy Destination:=destinationRange
         firstRow = firstRow + area.Rows.Count
     Next
+    'Highlight the search criteria in the Results sheet
+    Dim lastRow As Long
+    lastRow = newSheet.Cells(newSheet.Rows.Count, "A").End(xlUp).Row
+    For i = 1 To lastRow
+    For j = 1 To newSheet.UsedRange.Columns.Count
+    If InStr(1, UCase(newSheet.Cells(i, j).Value), UCase(searchCriteria), vbTextCompare) > 0 Then
+    newSheet.Cells(i, j).Font.Color = RGB(255, 0, 0)
+    End If
+    Next j
+    Next i
     'Alert the user with the number of matches found
     MsgBox "Found " & newSheet.UsedRange.Rows.Count - 1 & " matches for the search criteria" & vbNewLine & "Results are saved in 'Results' sheet."
 Else
